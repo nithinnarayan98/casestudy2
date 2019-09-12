@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+                <!-- Links -->
+                <%for(var i=0;i<nav.length;i++){%>
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="<%=nav[i].link%>"><%=nav[i].title%></a>
+                    </li>
+                   
+                  </ul>
+                  <%}%>
+                
+                  <!-- Navbar text-->
+                  
+                
+                </nav>
+              <br>
+              <br>
+              <br>
+              
+              <form action="/user/login" method="POST">
+              <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card">
+        <article class="card-body">
+              
+        <h4 class="card-title mb-4 mt-1">Sign in</h4>
+             <form>
+            <div class="form-group">
+                <label>username</label>
+                <input  class="form-control" placeholder="username" type="text"  name="uname">
+            </div> <!-- form-group// -->
+            <div class="form-group">
+                
+                <label>Your password</label>
+                <input class="form-control" placeholder="******" type="password" name="pwd">
+                <a class="float-right" href="#">Forgot?</a>
+            </div> <!-- form-group// --> 
+            <div class="form-group"> 
+            <div class="checkbox">
+              <label> <input type="checkbox"> Save password </label>
+            </div> <!-- checkbox .// -->
+            </div> <!-- form-group// -->  
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+            </div>
+            <div><a href="/user/reg">signup not a user </a></div> <!-- form-group// -->                                                           
+        </form>
+        </article>
+        </div> </div></form>
+        
+</body>
+</html>

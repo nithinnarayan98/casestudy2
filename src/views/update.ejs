@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Storystrap Template</title>
+		<meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+         
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+<style>
+    .thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{
+    background: #428bca;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+</style>
+       
+	</head>
+	<body>
+      
+
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+                    <!-- Links -->
+                    <%for(var i=0;i<nav.length;i++){%>
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" href="<%=nav[i].link%>"><%=nav[i].title%></a>
+                        </li>
+                       
+                      </ul>
+                      <%}%>
+                    
+                      <!-- Navbar text-->
+                      
+                    
+                    </nav>
+
+<div class="container">
+    
+    <div id="products" class="row list-group">
+            <% for(var i=0;i<books.length;i++){%>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="/books/view/<%=books[i].image%>" alt="" />
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                            <%=books[i].title %></h4>
+                    <p class="group inner list-group-item-text">
+                            <%=books[i].genre%></p>
+                            <p class="group inner list-group-item-text"> <%= books[i].dis%></p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                    <%= books[i].author%></p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="/books/edit/<%=books[i].id%>">edit</a><br>
+                            <a  class="btn btn-danger" href="/books/deletebook/<%=books[i].id%>">delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%}%>
+          </div>
+</div>
+	</body>
+</html>

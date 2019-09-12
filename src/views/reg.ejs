@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="/">
+    <title>signup</title>
+   
+        <!--custom css-->
+  
+    
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+</head>
+<body> 
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+                <!-- Links -->
+                <%for(var i=0;i<nav.length;i++){%>
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="<%=nav[i].link%>"><%=nav[i].title%></a>
+                    </li>
+                   
+                  </ul>
+                  <%}%>
+                
+                  <!-- Navbar text-->
+                  
+                
+                </nav>
+      </header>
+      <br>
+      <div id="reg">
+            <div class="container">
+                    <div class="row">
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                               <form action="/user/reg" method="POST">
+                                <p style="font-size: 30px; text-align: center" id="r">Register</p>
+                                <table class="table" style="width: 600px; margin:auto; border: 2px solid black; border-collapse: collapse;">
+                                    <tr>
+                                        <td>Name :</td>
+                                        <td><input type="text" class="form-control" name="nr" placeholder="Enter Name" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Username :</td>
+                                        <td><input type="text" class="form-control" name="unr" placeholder="Enter Username" required></td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>Password :</td>
+                                        <td><input type="password" class="form-control" name="pwr" placeholder="Enter Password" required></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Mobile :</td>
+                                        <td><input type="text" class="form-control" name="mr" pattern="[6789][0-9]{9}" placeholder="Enter Mobile" required></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Email :</td>
+                                        <td><input type="email" class="form-control" name="er" placeholder="Enter Email" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Role :</td>
+                                        <td><select  name="role" class="form-control">
+                                            <option>admin</option>
+                                            <option>user</option>
+                                        </select>
+                                    </td>
+                                    </tr>
+                                    <tr style="text-align: right">                        
+                                        <td><button class="btn" type="submit" id="rgbtn" style="width: 150px; color: #222; background: #63a792;">Sign Up</button></td>
+                                        <td> <a href="/user">login already a user</a></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    </div>
+     
+      
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</body>
+</html>
